@@ -1,0 +1,40 @@
+/**app.wxss**/
+page{
+  background-color: #f7f7f7;
+}
+/*默认字体大小*/
+view,text{
+  font-size:28rpx;
+}
+
+/*字体大小*/
+font-size-12{
+  font-size: 24rpx;
+}
+font-size-16{
+  font-size: 32rpx;
+}
+
+/*背景颜色*/
+.bg-cyan{
+  background-color: #d2f1f0;
+}
+.bg-white{
+  background-color: white;
+}
+.bg-red{
+  background-color: red;
+}
+.bg-blue{
+  background-color:#0081ff;
+}
+/*字体颜色*/
+.text-blue{
+  color: #0081ff;
+}
+.text-green{
+  color: #39b54a;
+}
+.text-white{
+  color:#fff
+}
