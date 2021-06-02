@@ -1,4 +1,5 @@
 {
   "usingComponents": {
+    "listInformation":"../../components/listInformation/index"
   }
 }

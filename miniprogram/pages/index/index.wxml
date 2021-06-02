@@ -35,10 +35,11 @@
   <image src="../image/banner.png"></image>
 </view>
 
-<view>
+<view wx:if="{{company!=''}}">
   <van-notice-bar
     left-icon="volume-o"
-    text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。"
+    text="{{company}}"
+    speed="5"
     background="#fff"
     color="#000"
   />
@@ -46,26 +47,29 @@
 
 <view class="list-name font-size-16">店长推荐</view>
 <view class="list">
-  <view  class="list-box">
+  <view wx:for="{{list}}" wx:key="id">
+    <listInformation listdata="{{item}}"></listInformation>
+  </view>
+  <!-- <view  class="list-box" wx:for="{{list}}" wx:key="id">
     <view class="list-left">
-      <image></image>
+      <image src="{{item.photoPic}}"></image>
       <text>推荐</text>
     </view>
     <view class="list-right">
-      <view class="name"></view>
+      <view class="name">{{item.title}}</view>
       <view class="info-box">
         <view class="info-content">
-          <view class="info-content-left"></view>
-          <view class="info-content-right"></view>
+          <view class="info-content-left">{{item.roomStyle}}</view>
+          <view class="info-content-right font-size-16 text-red">{{item.totalPrice}}{{item.EntrustType=='sale'?'万':'/月'}}</view>
         </view>
         <view class="info-content">
-          <view class="info-content-left"></view>
-          <view class="info-content-right"></view>
+          <view class="info-content-left">{{item.location}}</view>
+          <view class="info-content-right">{{item.EntrustType=='sale'?item.averagePrice:''}}{{item.EntrustType=='sale'?'平/万':''}}</view>
         </view>
         <view class="info-tag">
-          <view class="tag"></view>
+          <view class="tag font-size-12 bg-cyan" wx:for="{{item.Tags}}" wx:for-item="tagitem">{{tagitem}}</view>
         </view>
       </view>
     </view>
-  </view>
+  </view> -->
 </view>

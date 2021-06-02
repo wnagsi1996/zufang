@@ -1,4 +1,4 @@
-// pages/my/my.js
+// miniprogram/pages/login/login.js
 Page({
 
   /**
@@ -12,10 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let userInfo=wx.getStorageSync('userInfo');console.log(userInfo)
-    this.setData({
-      userInfo
-    })
+
   },
 
   /**
@@ -45,15 +42,25 @@ Page({
   onUnload: function () {
 
   },
-  //点击获取用户信息
-  bindgetuserinfo(e){
-    console.log(e)
-    if(e.detail.userInfo){
-      let userInfo=e.detail.userInfo;
-      this.setData({
-        userInfo:e.detail.userInfo
-      })
-      wx.setStorageSync('userInfo', userInfo)
-    }
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })

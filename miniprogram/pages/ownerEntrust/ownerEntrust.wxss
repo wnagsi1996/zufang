@@ -1,1 +1,8 @@
 /* pages/ownerEntrust/ownerEntrust.wxss */
+.menu-dox{
+  margin:30rpx;
+}
+.menu-dox image{
+  width: 100%;
+  height: 300rpx;
+}

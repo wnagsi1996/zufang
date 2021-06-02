@@ -8,10 +8,10 @@ view,text{
 }
 
 /*字体大小*/
-font-size-12{
+.font-size-12{
   font-size: 24rpx;
 }
-font-size-16{
+.font-size-16{
   font-size: 32rpx;
 }
 
@@ -37,4 +37,18 @@ font-size-16{
 }
 .text-white{
   color:#fff
+}
+.text-red{
+  color: red;
+}
+/* 字体加粗 */
+.font-bold{
+  font-weight: bold;
+}
+/* 圆角 */
+.border-radius5{
+  border-radius: 10rpx;
+}
+.border-radius10{
+  border-radius: 20rpx;
 }

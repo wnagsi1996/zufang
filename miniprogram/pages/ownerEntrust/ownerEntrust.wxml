@@ -1,2 +1,8 @@
 <!--pages/ownerEntrust/ownerEntrust.wxml-->
-<text>pages/ownerEntrust/ownerEntrust.wxml</text>
+<view class="menu-dox">
+  <image src="../image/rentout.png"></image>
+</view>
+<view class="menu-dox">
+  <image src="../image/sale.png"></image>
+</view>
+

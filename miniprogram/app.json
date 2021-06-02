@@ -1,34 +1,39 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/ownerEntrust/ownerEntrust",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/login/login"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "租房小程序",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "./pages/image/home.png",
-      "selectedIconPath": "./pages/image/home-selected.png"
-    },{
-      "pagePath": "pages/ownerEntrust/ownerEntrust",
-      "text": "业主委托",
-      "iconPath": "./pages/image/entrust-bar.png",
-      "selectedIconPath": "./pages/image/entrust-bar-selected.png"
-    },{
-      "pagePath": "pages/my/my",
-      "text": "用户中心",
-      "iconPath": "./pages/image/my.png",
-      "selectedIconPath": "./pages/image/my-selected.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./pages/image/home.png",
+        "selectedIconPath": "./pages/image/home-selected.png"
+      },
+      {
+        "pagePath": "pages/ownerEntrust/ownerEntrust",
+        "text": "业主委托",
+        "iconPath": "./pages/image/entrust-bar.png",
+        "selectedIconPath": "./pages/image/entrust-bar-selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "用户中心",
+        "iconPath": "./pages/image/my.png",
+        "selectedIconPath": "./pages/image/my-selected.png"
+      }
+    ]
   },
-  "usingComponents":{
+  "usingComponents": {
     "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index",
     "van-notice-bar": "@vant/weapp/notice-bar/index"

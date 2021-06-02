@@ -1,0 +1,57 @@
+/* components/listInformation/index.wxss */
+.list-box{
+  display: flex;
+  margin: 20rpx 0;
+  background-color: #fff;
+  padding: 20rpx;
+}
+.list-left{
+  width: 200rpx;
+  height: 200rpx;
+  position: relative;
+}
+.list-left image{
+  width: 100%;
+  height: 100%;
+}
+.list-left text{
+  position:absolute;
+  left: 0;
+  top: 10rpx;
+  background-color: red;
+  color: #fff;
+  border-radius:0 20rpx 20rpx 0;
+  padding: 6rpx 12rpx;
+  font-size: 24rpx;
+}
+.list-right{
+  flex: 1;
+  padding-left:16rpx
+}
+.list-right > .name{
+  font-weight: bold;
+}
+.info-box{
+  margin-top: 20rpx;
+}
+.info-content{
+  display:flex;
+  padding:8rpx 0
+}
+.info-content-left{
+  flex: 1;
+}
+.info-content-right{
+  flex: 1;
+  text-align: right;
+}
+.info-tag{
+  display: flex;
+ flex-wrap: wrap;
+}
+.info-tag .tag{
+  padding:4rpx 8rpx;
+  color: #888;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+}

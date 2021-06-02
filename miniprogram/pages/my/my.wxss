@@ -1,1 +1,75 @@
 /* pages/my/my.wxss */
+.header{
+  width: 100%;
+  height: 340rpx;
+}
+.header image{
+  width: 100%;
+  height: 100%;
+}
+.user-dox{
+  margin:20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  padding:20rpx;
+}
+.user-img{
+  width: 160rpx;
+  height:160rpx;
+}
+.user-img image{
+  width: 100%;
+  height: 100%;
+}
+.user-info{
+  padding-left: 20rpx;
+}
+.user-null{
+  padding:60rpx 20rpx;
+  position: relative;
+}
+.user-null image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.user-null text{
+  font-size:40rpx;
+  padding-left: 20rpx;
+}
+.user-null button{
+  width: 50%;
+  height: 200rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 0rpx;
+  opacity: 0;
+}
+.menu-dox{
+  margin:20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.menu-dox .name{
+  padding:20rpx
+}
+.user-item{
+  display: flex;
+  padding:20rpx;
+  align-items: center;
+}
+.user-item:not(:last-child){
+  border-bottom: 1rpx solid #ccc;
+}
+.user-item .icon{
+  width: 60rpx;
+  height:60rpx;
+}
+.user-item .icon image{
+  width: 100%;
+  height: 100%;
+}
+.user-info{
+  flex: 1;
+}
