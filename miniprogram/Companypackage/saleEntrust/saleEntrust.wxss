@@ -1,0 +1,23 @@
+/* miniprogram/Companypackage/saleEntrust/saleEntrust.wxss */
+.tag-dox{
+  padding:30rpx;
+}
+.tag-porint{
+  text-align: center;
+  padding-bottom: 20rpx;
+}
+.tag-content{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag{
+  padding:8rpx 20rpx;
+  border-radius: 10rpx;
+  border:1rpx solid #888;
+  margin:10rpx 20rpx;
+}
+.tag.active{
+  border:1rpx solid #0081ff;
+  background-color:#0081ff;
+  color: #fff;
+}

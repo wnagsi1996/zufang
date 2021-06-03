@@ -1,0 +1,54 @@
+<!--miniprogram/Companypackage/saleEntrust/saleEntrust.wxml-->
+<van-cell-group>
+  <van-field
+    wx:for="{{InputList}}"
+    wx:key="id"
+    label="{{item.title}}"
+    value="{{ value }}"
+    type="{{item.type}}"
+    data-name="{{item.id}}"
+    maxlength="{{item.maxlength}}"
+    placeholder="{{item.placeholder}}"
+    bind:change="onChange"
+  />
+  <van-field
+    wx:for="{{PickerList}}"
+    wx:key="id"
+    readonly
+    input-align="right"
+    label="{{item.title}}"
+    value="{{ item.point }}"
+    data-name="{{item.id}}"
+    bind:click-input="onPicker"
+  />
+</van-cell-group>
+
+<!-- 单列选择器 -->
+<van-popup
+  show="{{ popupShow }}"
+  round
+  position="bottom"
+  bind:close="onClose"
+>
+  <van-picker 
+  columns="{{ columns }}" 
+  title="111"
+  bind:confirm="onConfirm"
+  bind:change="onChange" 
+  />
+</van-popup>
+
+<!-- 标签选择器 -->
+<van-popup
+  show="{{ tagShow }}"
+  round
+  position="bottom"
+  bind:close="onClose"
+>
+  <view class="tag-dox">
+    <view class="tag-porint">最多只能选4个标签:{{templeTags.length}}/4)</view>
+    <view class="tag-content">
+      <view wx:for="{{checkbox}}" wx:key="id" data-id="{{item.value}}"  class="tag {{item.checked?'active':''}}" bindtap="_hankTag">{{item.name}}</view>
+    </view>
+  </view>
+</van-popup>
