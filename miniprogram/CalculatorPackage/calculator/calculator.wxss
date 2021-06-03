@@ -1,0 +1,48 @@
+/* miniprogram/CalculatorPackage/calculator/calculator.wxss */
+.header-nav{
+  width: 750rpx;
+  background-color: #fff;
+  padding:30rpx 0;
+  display: flex;
+  align-items: center;
+}
+.header-nav .nav{
+  flex: 1;
+  text-align: center;
+}
+.js-box{
+  padding: 30rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.js-box .item{
+  border-bottom: 1rpx solid #f7f7f7;
+  padding:20rpx 0;
+  display: flex;
+  align-items: center;
+}
+.js-box .item .name{
+  width: 200rpx;
+}
+.js-box .item .desc{
+  flex: 1;
+  text-align: right;
+}
+.js-box .item .desc .radio{
+  padding-left: 20rpx;
+  transform: scale(0.7);
+}
+.money-info{
+  display: flex;
+  align-items: center;
+}
+.money-info input{
+  flex:1;
+  padding-right:10rpx;
+}
+.money-info text{
+  width: 60rpx;
+}
+.btn{
+  margin-top: 40rpx;
+}

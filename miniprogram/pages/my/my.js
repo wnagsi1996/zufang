@@ -12,10 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let userInfo=wx.getStorageSync('userInfo');console.log(userInfo)
-    this.setData({
-      userInfo
-    })
+    
   },
 
   /**
@@ -29,7 +26,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userInfo=wx.getStorageSync('userInfo');
+    let isphone=wx.getStorageSync('isphone');
+    if(userInfo && isphone){
+      this.setData({
+        userInfo
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+    }
   },
 
   /**

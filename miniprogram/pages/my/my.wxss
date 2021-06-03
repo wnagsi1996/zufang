@@ -26,6 +26,9 @@
 .user-info{
   padding-left: 20rpx;
 }
+.user-info .desc{
+  color: #888;
+}
 .user-null{
   padding:60rpx 20rpx;
   position: relative;

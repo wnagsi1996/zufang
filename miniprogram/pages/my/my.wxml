@@ -7,8 +7,8 @@
     <image class="border-radius5" src="{{userInfo.avatarUrl}}"></image>
   </view>
   <view class="user-info">
-    <view class="name font-bold">{{userInfo.nickName}}</view>
-    <view class="desc">{{userInfo.nickName}}</view>
+    <view class="name font-bold">{{userInfo.name}}</view>
+    <view class="desc">{{userInfo.nickName}} {{userInfo.phone}}</view>
   </view>
 </view>
 <view class="user-dox user-null" wx:else>

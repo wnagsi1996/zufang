@@ -13,6 +13,12 @@ Page({
     this.getQueryHose()
     this.getCompanyInfo()
   },
+  //前往计算页面
+  goCalculator(){
+    wx.navigateTo({
+      url: '../../CalculatorPackage/calculator/calculator',
+    })
+  },
   //获取公告数据
   getCompanyInfo(){
     const db=wx.cloud.database();

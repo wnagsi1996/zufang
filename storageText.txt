@@ -1,0 +1,3 @@
+userInfo -- 用户信息
+islogin -- 是否登录
+isphone -- 是否完善信息

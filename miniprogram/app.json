@@ -33,10 +33,22 @@
       }
     ]
   },
+  "subpackages":[
+    {
+      "root":"CalculatorPackage",
+      "name": "CalculatorPacket",
+      "pages":[
+        "calculator/calculator"  
+      ]
+    }
+  ],
   "usingComponents": {
     "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index",
-    "van-notice-bar": "@vant/weapp/notice-bar/index"
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index"
   },
   "sitemapLocation": "sitemap.json"
 }

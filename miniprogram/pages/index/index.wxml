@@ -17,7 +17,7 @@
 </view>
 
 <view class="menu-box">
-  <view class="item">
+  <view class="item" bindtap="goCalculator">
     <image src="../image/calculate-home.png"></image>
     <text>房贷计算</text>
   </view>
