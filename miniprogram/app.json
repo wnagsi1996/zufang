@@ -33,12 +33,19 @@
       }
     ]
   },
-  "subpackages":[
+  "subpackages": [
     {
-      "root":"CalculatorPackage",
+      "root": "CalculatorPackage",
       "name": "CalculatorPacket",
-      "pages":[
-        "calculator/calculator"  
+      "pages": [
+        "calculator/calculator"
+      ]
+    },
+    {
+      "root": "Companypackage",
+      "name": "Companypackage",
+      "pages": [
+        "saleEntrust/saleEntrust"
       ]
     }
   ],
@@ -48,7 +55,9 @@
     "van-notice-bar": "@vant/weapp/notice-bar/index",
     "van-field": "@vant/weapp/field/index",
     "van-button": "@vant/weapp/button/index",
-    "van-icon": "@vant/weapp/icon/index"
+    "van-icon": "@vant/weapp/icon/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-picker": "@vant/weapp/picker/index"
   },
   "sitemapLocation": "sitemap.json"
 }

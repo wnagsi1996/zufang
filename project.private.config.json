@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -14,6 +15,12 @@
         {
           "name": "用户中心",
           "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "卖房",
+          "pathName": "Companypackage/saleEntrust/saleEntrust",
           "query": "",
           "scene": null
         }

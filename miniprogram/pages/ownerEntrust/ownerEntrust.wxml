@@ -3,6 +3,8 @@
   <image src="../image/rentout.png"></image>
 </view>
 <view class="menu-dox">
+ <navigator url="../../Companypackage/saleEntrust/saleEntrust">
   <image src="../image/sale.png"></image>
+ </navigator>
 </view>
 
