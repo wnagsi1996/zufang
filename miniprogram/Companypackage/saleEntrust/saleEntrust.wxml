@@ -31,10 +31,9 @@
   bind:close="onClose"
 >
   <van-picker 
-  columns="{{ columns }}" 
-  title="111"
+  columns="{{ columns.pickerlist }}" 
+  show-toolbar="true"
   bind:confirm="onConfirm"
-  bind:change="onChange" 
   />
 </van-popup>
 

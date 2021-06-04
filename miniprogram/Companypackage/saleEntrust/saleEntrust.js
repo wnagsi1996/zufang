@@ -233,13 +233,14 @@ Page({
     let name=e.currentTarget.dataset.name;
     this.setData({
       popupShow:true,
-      columns:PickerList.find(n=>n.id==name).pickerlist
+      columns:PickerList.find(n=>n.id==name)
     })
   },
   //关闭弹窗
   onClose(){
     this.setData({
-      popupShow:false
+      popupShow:false,
+      tagShow:false
     })
   },
   _hankTag(e){
@@ -263,5 +264,23 @@ Page({
         templeTags,
         checkbox
       })
+  },
+  //单列确认弹窗
+  onConfirm(e){
+    let detail=e.detail;
+    let columns=this.data.columns;
+    let PickerList=this.data.PickerList;
+    let FormData=this.data.FormData;
+    FormData[columns.id]=columns.value
+    PickerList.forEach(n=>{
+      if(n.id==columns.id){
+        n.point=detail.value
+      }
+    })
+    this.setData({
+      FormData,
+      PickerList,
+      popupShow:false
+    })
   }
 })

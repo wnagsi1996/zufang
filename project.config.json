@@ -85,6 +85,13 @@
 					"id": -1,
 					"name": "房贷计算器",
 					"pathName": "CalculatorPackage/calculator/calculator",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "卖房",
+					"pathName": "Companypackage/saleEntrust/saleEntrust",
 					"scene": null
 				}
 			]
