@@ -21,3 +21,12 @@
   background-color:#0081ff;
   color: #fff;
 }
+.upload{
+  background-color: #fff;
+  padding:30rpx;
+}
+.btn{
+  background-color: #fff;
+  text-align: center;
+  padding:30rpx
+}

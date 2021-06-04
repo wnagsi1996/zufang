@@ -45,7 +45,8 @@
       "root": "Companypackage",
       "name": "Companypackage",
       "pages": [
-        "saleEntrust/saleEntrust"
+        "saleEntrust/saleEntrust",
+        "myentrust/myentrust"
       ]
     }
   ],
@@ -57,7 +58,10 @@
     "van-button": "@vant/weapp/button/index",
     "van-icon": "@vant/weapp/icon/index",
     "van-popup": "@vant/weapp/popup/index",
-    "van-picker": "@vant/weapp/picker/index"
+    "van-picker": "@vant/weapp/picker/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
   },
   "sitemapLocation": "sitemap.json"
 }

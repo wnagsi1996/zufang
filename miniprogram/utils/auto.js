@@ -38,5 +38,32 @@ const getUserInfo=()=>{
 
 //自动登录
 const autoLogin=()=>{
-
+  wx.cloud.callFunction({
+    name:'InitInfo',
+    data:{
+      type:'INIT'
+    },
+    success:res=>{
+      console.log(res)
+      let result=res.result.data;
+      if(result.length>0){
+        let userInfo=wx.getStorageSync('userInfo');
+        userInfo['name']=result[0].name;
+        userInfo['phone']=result[0].phone;
+        userInfo['openid']=result[0]._openid;
+        userInfo['address']=result[0].address;
+        wx.setStorageSync('userInfo', userInfo);
+      }else{
+        wx.navigateTo({
+          url: '../pages/login/login',
+        })
+      }
+    },
+    fail:err=>{
+      console.log(err)
+    }
+  })
+}
+module.exports={
+  autoLogin
 }

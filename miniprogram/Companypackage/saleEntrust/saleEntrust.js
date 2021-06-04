@@ -1,4 +1,5 @@
 // miniprogram/Companypackage/saleEntrust/saleEntrust.js
+import { formatTime} from '../../utils/util'
 Page({
 
   /**
@@ -84,9 +85,18 @@ Page({
 
     // 房型选择列表
     HouseStyleList: [
-        ['0室', '1室', '2室', '3室', '4室', '5室'],
-        ['0厅', '1厅', '2厅', '3厅'],
-        ['0卫', '1卫', '2卫', '3卫']
+        {
+          values:['0室', '1室', '2室', '3室', '4室', '5室'],
+          classNmae:'column1'
+        },
+        {
+          values:['0厅', '1厅', '2厅', '3厅'],
+          classNmae:'column2'
+        },
+        {
+          values: ['0卫', '1卫', '2卫', '3卫'],
+          classNmae:'column3'
+        }
     ],
     // 房型选择结果
     HouseStyleSelected: [0, 0, 0],
@@ -179,14 +189,16 @@ Page({
         checked: false
     }],
     // 临时变量
-    templeCheckbox: [],
-    templeTags: [],
+    templeCheckbox: '请选择',
+    templeTags: '请选择',
     //弹窗显示隐藏
     popupShow:false,
     //弹窗数据
     columns:[],
     //标签选择器弹窗
-    tagShow:true
+    tagShow:false,
+    // 多列选择器
+    popupDuoShow:false
   },
 
   /**
@@ -240,40 +252,48 @@ Page({
   onClose(){
     this.setData({
       popupShow:false,
-      tagShow:false
+      tagShow:false,
+      popupDuoShow:false
     })
   },
   _hankTag(e){
-    let templeTags=this.data.templeTags;
-    
+      
       let id=e.currentTarget.dataset.id;
       let checkbox=this.data.checkbox
       let check=checkbox.find(n=>n.value==id);
-      
+      let FormData=this.data.FormData;
       if(check.checked){
         check.checked=false;
-        templeTags=templeTags.filter(n=>n.value!=id)
+        FormData.Tags=FormData.Tags.filter(n=>n.value!=id)
       }else{
-        if(templeTags.length<4){
+        if(FormData.Tags.length<4){
           check.checked=true;
-          templeTags.push(check)
+          FormData.Tags.push(check)
         }
       }
       Object.assign(checkbox,check);
+      let templeTags='';
+      if(FormData.Tags.length>0){
+        FormData.Tags.forEach(n=>{
+          templeTags+=n.name+','
+        })
+      }
+
       this.setData({
-        templeTags,
-        checkbox
+        templeTags:templeTags!=''?templeTags.substring(0,templeTags.length-1):'请选择',
+        checkbox,
+        FormData
       })
   },
   //单列确认弹窗
   onConfirm(e){
     let detail=e.detail;
-    let columns=this.data.columns;
+    let {id,point}=this.data.columns;
     let PickerList=this.data.PickerList;
     let FormData=this.data.FormData;
-    FormData[columns.id]=columns.value
+    FormData[id]=detail.value;
     PickerList.forEach(n=>{
-      if(n.id==columns.id){
+      if(n.id==id){
         n.point=detail.value
       }
     })
@@ -281,6 +301,171 @@ Page({
       FormData,
       PickerList,
       popupShow:false
+    })
+  },
+  //单击房子优势
+  onTagPicker(){
+    this.setData({
+      tagShow:true
+    })
+  },
+  // 居室
+  onHouseStyleListConfirm(e){
+    let value=e.detail.value  //roomStyle
+    let str='';
+    let roomStyle='';
+    value.forEach((n,i)=>{
+      if(i==0){
+        if(n.includes(0) || n.includes(1)){
+          roomStyle='1居室'
+        }else{
+          roomStyle=`${Number.parseInt(n.value)}居室`
+        }
+      }
+      str+=n.includes(0)?'':n
+    })
+    let FormData=this.data.FormData;
+    FormData.houseStyle=str
+    FormData.roomStyle=roomStyle
+    this.setData({
+      templeCheckbox:str==''?'请选择':str,
+      FormData,
+      popupDuoShow:false
+    })
+    
+  },
+  onJsPicker(){
+    this.setData({
+      popupDuoShow:true
+    })
+  },
+  //图片上传
+  afterRead(e){
+    const { file } = e.detail;
+    let imgList=this.data.imgList;
+    imgList.push({url:file.url,name:file.size});
+    this.setData({
+      imgList
+    })
+  },
+  //删除图片
+  delImage(e){
+    let file=e.detail.file;
+    let imgList=this.data.imgList;
+    imgList=imgList.filter(n=> n.name!=file.name);
+    this.setData({
+      imgList
+    })
+  },
+  submitSend(){
+    let FormData=this.data.FormData;console.log(FormData)
+    // 计算平均价格
+    let averagePrice = (FormData['totalPrice'] * 10000 / FormData['area']).toFixed(2);
+    FormData['averagePrice']=averagePrice;
+    let imgList=this.data.imgList;
+    for(let key in FormData){
+      if(FormData[key]==''){
+        console.log(FormData[key])
+        console.log(key)
+        wx.showToast({
+          title: '请完善您的信息',
+          icon:'none'
+        })
+        return;
+      }
+    }
+    let tags=FormData.Tags.map(n=> n.name)
+    FormData.Tags=tags;
+    if(imgList.length==0){
+      wx.showToast({
+        title: '请上传图片',
+        icon:'none'
+      });
+      return;
+    }
+    imgList=imgList.map(n=>n.url);
+    this.setData({
+      newimgList:imgList,
+      newFormData:FormData
+    })
+    this.uploadImage()
+  },
+  uploadImage(){
+    wx.showLoading({
+      title: '保存图片...',
+      mask: true
+    })
+    let imglist=this.data.newimgList;
+    let imgPathList = []
+    for(let i=0;i<imglist.length;i++){
+      let fileName = imglist[i];
+      let dotPosition = fileName.lastIndexOf('.');
+      let extension = fileName.slice(dotPosition);
+      let cloudPath = `${Date.now()}-${Math.floor(Math.random(0, 1) * 10000000)}${extension}`;
+      wx.cloud.uploadFile({
+        cloudPath,
+        filePath: fileName,
+        success:(res)=>{
+          wx.hideLoading();
+          imgPathList.push(res.fileID)
+          if(imgPathList.length==imglist.length){
+            // 保存信息
+            this.SubmitEntrust(imgPathList)
+          }
+        },
+        fail:(err)=>{
+          wx.hideToast();
+          wx.showToast({
+            title: '图片保存失败',
+            icon:'none'
+          })
+        }
+      })
+    }
+  },
+  SubmitEntrust(photoInfo){
+    wx.showLoading({
+      title: '提交委托...',
+      mask: true
+    });
+    let FormData=this.data.newFormData;
+    console.log(FormData)
+    console.log(photoInfo)
+    console.log(formatTime(new Date()))
+    wx.cloud.callFunction({
+      name:'Entrust',
+      data:{
+        type: 'add',
+        EntrustType: 'sale',
+        FormData: FormData,
+        photoInfo: photoInfo,
+        updateTime: formatTime(new Date())
+      },
+      success:(res)=>{
+        console.log(1)
+        wx.hideLoading();
+        wx.showToast({
+          title: '委托提交成功',
+        })
+        wx.navigateTo({
+          url: '../../pages/index/index',
+        })
+      },
+      fail:(err)=>{
+        console.log(err)
+        wx.hideLoading();
+        wx.showToast({
+          title: '委托提交失败'
+        })
+        // 把已经上传的图片删除
+        wx.cloud.deleteFile({
+          fileList: photoInfo,
+          success: res => {
+              console.log('delimages', res.fileList)
+          },
+          fail: console.error
+      })
+      }
     })
   }
 })

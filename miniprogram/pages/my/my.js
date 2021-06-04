@@ -27,14 +27,9 @@ Page({
    */
   onShow: function () {
     let userInfo=wx.getStorageSync('userInfo');
-    let isphone=wx.getStorageSync('isphone');
-    if(userInfo && isphone){
+    if(userInfo.name){
       this.setData({
         userInfo
-      })
-    }else{
-      wx.navigateTo({
-        url: '/pages/login/login',
       })
     }
   },
@@ -62,5 +57,10 @@ Page({
       })
       wx.setStorageSync('userInfo', userInfo)
     }
+  },
+  toUrl(e){
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
   }
 })

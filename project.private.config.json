@@ -23,6 +23,12 @@
           "pathName": "Companypackage/saleEntrust/saleEntrust",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "我的委托",
+          "pathName": "Companypackage/myentrust/myentrust",
+          "query": "",
+          "scene": null
         }
       ]
     }

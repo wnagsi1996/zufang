@@ -1,0 +1,24 @@
+/* Companypackage/myentrust/myentrust.wxss */
+.item-box{
+  margin:30rpx 30rpx 0 30rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding:20rpx
+}
+.item-box view{
+  padding:8rpx 0;
+  color:#888;
+  font-size: 24rpx;
+}
+.item-box .item-name{
+  font-size:36rpx;
+  padding-bottom: 10rpx;
+  color: #000;
+}
+.item-info1 text{
+  font-size: 24rpx;
+}
+.item-info1 text:last-child{
+  color: red;
+  padding-left: 8rpx;
+} 

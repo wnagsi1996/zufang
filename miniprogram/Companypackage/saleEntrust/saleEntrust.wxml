@@ -11,6 +11,24 @@
     placeholder="{{item.placeholder}}"
     bind:change="onChange"
   />
+</van-cell-group>
+
+  <van-field
+    readonly
+    input-align="right"
+    label="房子优势"
+    value="{{ templeTags }}"
+    bind:click-input="onTagPicker"
+  />
+  <van-field
+    readonly
+    input-align="right"
+    label="居室情况"
+    value="{{ templeCheckbox }}"
+    bind:click-input="onJsPicker"
+  />
+  <van-cell-group>
+
   <van-field
     wx:for="{{PickerList}}"
     wx:key="id"
@@ -22,6 +40,12 @@
     bind:click-input="onPicker"
   />
 </van-cell-group>
+<view class="upload">
+  <van-uploader max-count="{{4}}" file-list="{{ imgList }}" bind:after-read="afterRead" bind:delete="delImage" />
+</view>
+<view class="btn">
+  <van-button type="info" block bindtap="submitSend">发布卖房委托</van-button>
+</view>
 
 <!-- 单列选择器 -->
 <van-popup
@@ -41,13 +65,28 @@
 <van-popup
   show="{{ tagShow }}"
   round
+  closeable
   position="bottom"
   bind:close="onClose"
 >
   <view class="tag-dox">
-    <view class="tag-porint">最多只能选4个标签:{{templeTags.length}}/4)</view>
+    <view class="tag-porint">最多只能选4个标签:{{FormData.Tags.length}}/4)</view>
     <view class="tag-content">
       <view wx:for="{{checkbox}}" wx:key="id" data-id="{{item.value}}"  class="tag {{item.checked?'active':''}}" bindtap="_hankTag">{{item.name}}</view>
     </view>
   </view>
+</van-popup>
+
+<!-- 多列选择器 -->
+<van-popup
+  show="{{ popupDuoShow }}"
+  round
+  position="bottom"
+  bind:close="onClose"
+>
+  <van-picker 
+  columns="{{ HouseStyleList }}" 
+  show-toolbar="true"
+  bind:confirm="onHouseStyleListConfirm"
+  />
 </van-popup>
