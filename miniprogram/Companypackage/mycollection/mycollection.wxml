@@ -1,0 +1,14 @@
+<!--Companypackage/mycollection/mycollection.wxml-->
+<view>
+  <view class="coll-dox" wx:for="{{list}}" wx:key="id">
+    <view class="coll-image">
+      <image src="{{item.houseImages[0]}}"></image>
+    </view>
+    <view class="coll-info">
+      <view class="name">{{item.title}}</view>
+      <view class="desc">地点:{{item.location}}</view>
+      <view class="desc">房型:{{item.houseStyle}}</view>
+      <view class="desc">推荐时间:{{item.updateTime}}</view>
+    </view>
+  </view>
+</view>

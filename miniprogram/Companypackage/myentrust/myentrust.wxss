@@ -3,7 +3,8 @@
   margin:30rpx 30rpx 0 30rpx;
   background-color: #fff;
   border-radius: 10rpx;
-  padding:20rpx
+  padding:20rpx;
+  position: relative;
 }
 .item-box view{
   padding:8rpx 0;
@@ -22,3 +23,15 @@
   color: red;
   padding-left: 8rpx;
 } 
+.item-info1 text.blue{
+  color:blue
+}
+.status{
+  position: absolute;
+  top:20rpx;
+  right: 20rpx;
+}
+.status image{
+  width: 100rpx;
+  height: 100rpx;
+}

@@ -1,0 +1,6 @@
+/* Companypackage/steps/steps.wxss */
+.steps-dox{
+  margin:30rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}

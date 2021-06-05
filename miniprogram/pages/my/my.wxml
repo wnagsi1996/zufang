@@ -25,7 +25,7 @@
   </view>
   <view class="user-info">我的委托</view>
   </view>
-  <view class="user-item">
+  <view class="user-item" data-url="../../Companypackage/mycollection/mycollection" bindtap="toUrl">
     <view class="icon">
     <image src="../image/mycollection.png"></image>
   </view>

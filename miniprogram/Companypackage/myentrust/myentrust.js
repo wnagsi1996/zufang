@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.MyEntrust(0)
+    this.MyEntrust('sale')
   },
 
   /**
@@ -100,6 +100,13 @@ Page({
           List: []
         })
       }
+    })
+  },
+  Navigate(e){
+    let data=e.currentTarget.dataset.data;
+    data=JSON.stringify(data);
+    wx.navigateTo({
+      url: '../steps/steps?id=myentrust&data='+data,
     })
   }
 })

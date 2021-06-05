@@ -1,0 +1,10 @@
+<!--Companypackage/steps/steps.wxml-->
+<view class="steps-dox">
+  <van-steps
+  steps="{{ steps }}"
+  active="{{ active }}"
+  direction="vertical"
+  active-color="#ee0a24"
+/>
+
+</view>
