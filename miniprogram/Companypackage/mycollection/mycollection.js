@@ -1,4 +1,5 @@
 // Companypackage/mycollection/mycollection.js
+import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog';
 Page({
 
   /**
@@ -42,7 +43,64 @@ Page({
       }
     })
   },
-
+  _hankDel(event){
+    console.log(event)
+    const { position, instance } = event.detail;
+    const {id}=event.currentTarget.dataset;
+    switch (position) {
+      case 'left':
+      case 'cell':
+        instance.close();
+        break;
+      case 'right':
+        Dialog.confirm({
+          context:this,
+          message: '确定删除吗？',
+        }).then(() => {
+          const db=wx.cloud.database();
+          db.collection('Collections').where({
+            _id:id
+          }).remove({
+            success:res=>{
+              if (res.errMsg == 'collection.remove:ok') {
+                if (res.stats.removed > 0) {
+                  let openid = this.data.openid;
+                  this.getCollection(openid);
+                }else{
+                  wx.showToast({
+                    title: '删除失败',
+                    icon:'none'
+                  })
+                }
+              }else{
+                wx.showToast({
+                  title: '网络错误,请返回重新打开',
+                  mask: true,
+                  icon: 'none'
+               })
+              }
+            },
+            fail:err=>{
+              wx.showToast({
+                title: '网络错误,请返回重新打开',
+                mask: true,
+                icon: 'none'
+              })
+            }
+          })
+          instance.close();
+        }).catch(()=>{
+          instance.close();
+        })
+        break;
+    }
+  },
+  toUrl(e){
+    const id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../houseDetail/houseDetail?id='+id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

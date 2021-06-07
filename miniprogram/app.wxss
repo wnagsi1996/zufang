@@ -4,7 +4,7 @@ page{
 }
 /*默认字体大小*/
 view,text{
-  font-size:28rpx;
+  font-size:24rpx;
 }
 
 /*字体大小*/

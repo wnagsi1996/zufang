@@ -19,7 +19,17 @@
 }
 .coll-info view{
   padding-bottom:10rpx;
+  font-size: 24rpx;
 }
 .coll-info .name{
   font-weight: bold;
+  font-size: 28rpx;
+}
+.del{
+  width: 130rpx;
+  height: 260rpx;
+  line-height: 260rpx;
+  text-align: center;
+  background-color: red;
+  color: #fff;
 }

@@ -1,14 +1,22 @@
 <!--Companypackage/mycollection/mycollection.wxml-->
 <view>
-  <view class="coll-dox" wx:for="{{list}}" wx:key="id">
-    <view class="coll-image">
-      <image src="{{item.houseImages[0]}}"></image>
-    </view>
-    <view class="coll-info">
-      <view class="name">{{item.title}}</view>
-      <view class="desc">地点:{{item.location}}</view>
-      <view class="desc">房型:{{item.houseStyle}}</view>
-      <view class="desc">推荐时间:{{item.updateTime}}</view>
-    </view>
+  <view  wx:for="{{list}}" wx:key="id">
+    <van-swipe-cell right-width="{{ 65 }}" data-id="{{item._id}}" async-close bind:close="_hankDel">
+      <view class="coll-dox">
+        <view class="coll-image" data-id="{{item.ID}}" bindtap="toUrl">
+          <image src="{{item.houseImages[0]}}"></image>
+        </view>
+        <view class="coll-info">
+          <view class="name">{{item.title}}</view>
+          <view class="desc">地点:{{item.location}}</view>
+          <view class="desc">房型:{{item.houseStyle}}</view>
+          <view class="desc">推荐时间:{{item.updateTime}}</view>
+          <view class="desc">点图片看详情</view>
+        </view>
+      </view>
+    <view class="del" slot="right">删除</view>
+  </van-swipe-cell>
   </view>
+  
+  <van-dialog id="van-dialog"/>
 </view>

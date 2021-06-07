@@ -29,6 +29,18 @@
           "pathName": "Companypackage/myentrust/myentrust",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "收藏",
+          "pathName": "Companypackage/mycollection/mycollection",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "详情",
+          "pathName": "Companypackage/houseDetail/houseDetail",
+          "query": "id=b00064a760b60af21d09c9db32be3850",
+          "scene": null
         }
       ]
     }

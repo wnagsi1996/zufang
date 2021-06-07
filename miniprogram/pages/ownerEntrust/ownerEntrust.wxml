@@ -1,6 +1,8 @@
 <!--pages/ownerEntrust/ownerEntrust.wxml-->
 <view class="menu-dox">
-  <image src="../image/rentout.png"></image>
+  <navigator url="../../Companypackage/rentOutEntrust/rentOutEntrust">
+    <image src="../image/rentout.png"></image>
+  </navigator>
 </view>
 <view class="menu-dox">
  <navigator url="../../Companypackage/saleEntrust/saleEntrust">

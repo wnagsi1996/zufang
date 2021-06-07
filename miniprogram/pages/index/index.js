@@ -79,5 +79,11 @@ Page({
     }).catch(err=>{
       console.log(err)
     })
+  },
+  toUrl(e){
+    let id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../../Companypackage/houseDetail/houseDetail?id='+id,
+    })
   }
 })

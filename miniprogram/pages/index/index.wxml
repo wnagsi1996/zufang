@@ -48,7 +48,7 @@
 <view class="list-name font-size-16">店长推荐</view>
 <view class="list">
   <view wx:for="{{list}}" wx:key="id">
-    <listInformation listdata="{{item}}"></listInformation>
+      <listInformation listdata="{{item}}" data-id="{{item.id}}" bindtap="toUrl"></listInformation>
   </view>
   <!-- <view  class="list-box" wx:for="{{list}}" wx:key="id">
     <view class="list-left">
