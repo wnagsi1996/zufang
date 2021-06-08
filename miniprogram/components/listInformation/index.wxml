@@ -2,7 +2,7 @@
 <view  class="list-box">
     <view class="list-left">
       <image src="{{listdata.photoPic}}"></image>
-      <text>推荐</text>
+      <text wx:if="{{recommend}}">推荐</text>
     </view>
     <view class="list-right">
       <view class="name">{{listdata.title}}</view>
@@ -13,7 +13,7 @@
         </view>
         <view class="info-content">
           <view class="info-content-left">{{listdata.location}}</view>
-          <view class="info-content-right">{{listdata.EntrustType=='sale'?listdata.averagePrice:''}}{{listdata.EntrustType=='sale'?'平/万':''}}</view>
+          <view class="info-content-right">{{listdata.EntrustType=='sale'?listdata.averagePrice:''}}{{listdata.EntrustType=='sale'?'元/㎡':''}}</view>
         </view>
         <view class="info-tag">
           <view class="tag font-size-12 bg-cyan" wx:for="{{listdata.Tags}}" wx:for-item="tagitem" wx:for-key="idx" wx:key="idx">{{tagitem}}</view>

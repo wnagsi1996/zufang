@@ -45,6 +45,9 @@
   flex: 1;
   text-align: right;
 }
+.info-content .text-red{
+  color: red;
+}
 .info-tag{
   display: flex;
  flex-wrap: wrap;

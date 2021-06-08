@@ -50,7 +50,9 @@
         "steps/steps",
         "mycollection/mycollection",
         "houseDetail/houseDetail",
-        "rentOutEntrust/rentOutEntrust"
+        "rentOutEntrust/rentOutEntrust",
+        "qualification/qualification",
+        "newHouse/newHouse"
       ]
     }
   ],

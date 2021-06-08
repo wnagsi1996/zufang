@@ -1,0 +1,13 @@
+<!--Companypackage/qualification/qualification.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="title">企业介绍</view>
+    <view class="txt">{{introduce}}</view>
+  </view>
+  <view class="header">
+    <view class="title">企业资质</view>
+    <image src="../image/company/company-info.jpg"></image>
+  </view>
+  <view class="content-txt">更新于 {{updatetime}}</view>
+</view>
+

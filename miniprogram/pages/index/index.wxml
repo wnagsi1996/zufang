@@ -1,6 +1,6 @@
 <view class="select-box">
   <view class="item">
-    <navigator>
+    <navigator url="../../Companypackage/newHouse/newHouse">
       <image src="../image/newHouse.png"></image>
     </navigator>
   </view>
@@ -17,11 +17,11 @@
 </view>
 
 <view class="menu-box">
-  <view class="item" bindtap="goCalculator">
+  <view class="item" bindtap="goCalculator" data-url="" bindtap="toUrl">
     <image src="../image/calculate-home.png"></image>
     <text>房贷计算</text>
   </view>
-  <view class="item">
+  <view class="item" data-url="../../Companypackage/qualification/qualification" bindtap="toUrl">
     <image src="../image/qualifications.png"></image>
     <text>公司资质</text>
   </view>
@@ -48,7 +48,7 @@
 <view class="list-name font-size-16">店长推荐</view>
 <view class="list">
   <view wx:for="{{list}}" wx:key="id">
-      <listInformation listdata="{{item}}" data-id="{{item.id}}" bindtap="toUrl"></listInformation>
+      <listInformation recommend="{{true}}" listdata="{{item}}" data-id="{{item.id}}" bindtap="toUrl"></listInformation>
   </view>
   <!-- <view  class="list-box" wx:for="{{list}}" wx:key="id">
     <view class="list-left">

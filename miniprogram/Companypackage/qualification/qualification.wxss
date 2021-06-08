@@ -1,0 +1,27 @@
+/* Companypackage/qualification/qualification.wxss */
+.container{
+  margin:40rpx;
+  padding:35rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 30rpx #ccc;
+}
+.header{
+  padding-bottom: 30rpx;
+}
+.header .title{
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.header .txt{
+  margin-top: 10rpx;
+}
+.header image{
+  margin-top: 20rpx;
+  width: 100%;
+  height: 460rpx;
+  border-radius: 20rpx;
+}
+.content-txt{
+  text-align: center;
+}

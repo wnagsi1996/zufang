@@ -1,0 +1,9 @@
+<!--Companypackage/newHouse/newHouse.wxml-->
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ RoomStyle }}" options="{{ HouseStyleList }}" bind:change="_handChange" />
+  <van-dropdown-item value="{{ RoomPrice }}" options="{{ HousingPriceList }}" />
+</van-dropdown-menu>
+
+<view class="" wx:for="{{HouseList}}" wx:key="id">
+  <listInformation listdata="{{item}}" data-id="{{item.id}}" bindtap="toUrl"></listInformation>
+</view>

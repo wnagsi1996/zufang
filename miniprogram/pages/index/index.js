@@ -82,8 +82,16 @@ Page({
   },
   toUrl(e){
     let id=e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../../Companypackage/houseDetail/houseDetail?id='+id,
-    })
+    let url=e.currentTarget.dataset.url;
+    if(id){
+      wx.navigateTo({
+        url: '../../Companypackage/houseDetail/houseDetail?id='+id,
+      })
+    }else{
+      wx.navigateTo({
+        url
+      })
+    }
+   
   }
 })
