@@ -63,6 +63,7 @@ Page({
     })
     .get()
     .then(res=>{
+      
       if(res.data.length>0){
         let data=res.data;
         
@@ -72,6 +73,7 @@ Page({
           Object.assign(obj,n.FormData,{EntrustType:n.EntrustType,photoPic:n.photoInfo[0],title:n.title,id:n._id})
           arrt.push(obj);
         })
+        console.log(arrt)
         this.setData({
           list:arrt
         })
@@ -83,10 +85,18 @@ Page({
   toUrl(e){
     let id=e.currentTarget.dataset.id;
     let url=e.currentTarget.dataset.url;
+    let entrusttype=e.currentTarget.dataset.entrusttype;
     if(id){
-      wx.navigateTo({
-        url: '../../Companypackage/houseDetail/houseDetail?id='+id,
-      })
+      if(entrusttype=='rentout'){
+        wx.navigateTo({
+          url: '../../Companypackage/rentingHouseDetail/rentingHouseDetail?id='+id
+        })
+      }else{
+        wx.navigateTo({
+          url: '../../Companypackage/houseDetail/houseDetail?id='+id,
+        })
+      }
+      
     }else{
       wx.navigateTo({
         url

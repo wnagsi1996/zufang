@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "新房等你挑",
+  "navigationBarTitleText": "二手房-找房",
   "enablePullDownRefresh": true,
   "usingComponents": {
     "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",

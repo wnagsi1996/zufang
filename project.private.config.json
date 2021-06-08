@@ -41,6 +41,30 @@
           "pathName": "Companypackage/houseDetail/houseDetail",
           "query": "id=b00064a760b60af21d09c9db32be3850",
           "scene": null
+        },
+        {
+          "name": "新房",
+          "pathName": "Companypackage/newHouse/newHouse",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "二手房",
+          "pathName": "Companypackage/secondHandHouse/secondHandHouse",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "出租",
+          "pathName": "Companypackage/rentingHouse/rentingHouse",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "员工",
+          "pathName": "Companypackage/Contact/Contact",
+          "query": "",
+          "scene": null
         }
       ]
     }

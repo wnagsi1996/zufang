@@ -6,7 +6,7 @@
 
 <block wx:if="{{HouseList.length>0}}">
   <view class="" wx:for="{{HouseList}}" wx:key="id">
-    <listInformation listdata="{{item}}" data-id="{{item.id}}" bindtap="toUrl"></listInformation>
+    <listInformation isRentingHouse="{{true}}" listdata="{{item}}" data-id="{{item.id}}" bindtap="toUrl"></listInformation>
   </view>
 </block>
 <view wx:else class="empty">

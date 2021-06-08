@@ -8,6 +8,11 @@ Component({
     recommend:{
       type:Boolean,
       default:false
+    },
+    //是否是出租引用
+    isRentingHouse:{
+      type:Boolean,
+      default:false
     }
   },
 

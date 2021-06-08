@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "房子详情",
+  "usingComponents": {
+    "van-action-sheet": "@vant/weapp/action-sheet/index"
+  }
+}

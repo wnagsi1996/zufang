@@ -52,7 +52,12 @@
         "houseDetail/houseDetail",
         "rentOutEntrust/rentOutEntrust",
         "qualification/qualification",
-        "newHouse/newHouse"
+        "newHouse/newHouse",
+        "secondHandHouse/secondHandHouse",
+        "rentingHouse/rentingHouse",
+        "rentingHouseDetail/rentingHouseDetail",
+        "Contact/Contact"
+
       ]
     }
   ],
@@ -71,7 +76,8 @@
     "van-steps": "@vant/weapp/steps/index",
     "van-card": "@vant/weapp/card/index",
     "van-swipe-cell": "@vant/weapp/swipe-cell/index",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-empty": "@vant/weapp/empty/index"
   },
   "sitemapLocation": "sitemap.json"
 }

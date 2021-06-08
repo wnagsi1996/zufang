@@ -1,0 +1,24 @@
+/* Companypackage/Contact/Contact.wxss */
+.userlist{
+  margin:25rpx;
+}
+.user-item{
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin:20rpx auto;
+  padding:20rpx;
+  display: flex;
+  align-items: center;
+}
+.user-left{
+  flex:1;
+}
+.user-left .name{
+  font-size: 32rpx;
+  font-weight: bold;
+  padding-bottom: 20rpx;
+}
+.user-right{
+  width: 80rpx;
+  text-align: center;
+}

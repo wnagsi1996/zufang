@@ -29,30 +29,27 @@ Page({
         value: '五居室'
     }
     ],
-    HousingPriceList: [{
+    HousingPriceList: [
+      {
         text: '所有价格',
         value: { 'min': 0, 'max': 0, 'HousePrice': '所有价格' }
-    }, {
-        text: '0–50万',
-        value: { 'min': 0, 'max': 50, 'HousePrice': '0–50万' }
-    },
-    {
-        text: '50–100万',
-        value: { 'min': 50, 'max': 100, 'HousePrice': '50–100万' }
-    },
-    {
-        text: '100–150万',
-        value: { 'min': 100, 'max': 150, 'HousePrice': '100–150万' }
-    },
-    {
-        text: '150–200万',
-        value: { 'min': 150, 'max': 200, 'HousePrice': '150–200万' }
-    },
-    {
-        text: '200万以上',
-        value: { 'min': 200, 'max': 100000, 'HousePrice': '200万以上' }
-    }
-    ],
+      }, {
+          text: '0-1000',
+          value: { 'min': 0, 'max': 1000}
+      },
+      {
+          text: '1000-2000',
+          value: { 'min': 1000, 'max': 2000 }
+      },
+      {
+          text: '2000-3000',
+          value: { 'min': 2000, 'max':3000}
+      },
+      {
+          text: '3000以上',
+          value: { 'min': 3000, 'max': 100000}
+      }
+      ],
     // 户型
     RoomStyle: '0',
     // 价格区间
@@ -84,7 +81,7 @@ Page({
   //获取总数
   getTotal(){
     const db=wx.cloud.database();
-    db.collection('NewHouse').count({
+    db.collection('RentingHouse').count({
       success:res=>{
         if (res.errMsg == "collection.count:ok") {
           this.setData({
@@ -108,13 +105,14 @@ Page({
       name:'HouseInfo',
       data:{
         type: type,
-        key: 'NewHouse',
+        key: 'RentingHouse',
         page: page,
         min: min,
         max: max,
         RoomStyle: RoomStyle
       },
       success:res=>{
+        console.log(res)
         if(res.errMsg=='cloud.callFunction:ok'){
           if(res.result.list.length>0){
             let data=res.result.list;
@@ -165,7 +163,7 @@ Page({
   toUrl(e){
     let id=e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../houseDetail/houseDetail?id='+id,
+      url: '../rentingHouseDetail/rentingHouseDetail?id='+id,
     })
   },
   //价格变化
@@ -217,7 +215,7 @@ Page({
     this.setData({
       page:0
     })
-    this.QueryHose(this.data.page.this.data.type)
+    this.QueryHose(this.data.page, this.data.type)
   },
 
   /**
@@ -227,7 +225,7 @@ Page({
     this.setData({
       page:this.data.page++
     })
-    this.QueryHose(this.data.page.this.data.type)
+    this.QueryHose(this.data.page, this.data.type)
   },
 
   /**

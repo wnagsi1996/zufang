@@ -84,7 +84,7 @@ Page({
   //获取总数
   getTotal(){
     const db=wx.cloud.database();
-    db.collection('NewHouse').count({
+    db.collection('SecondHouse').count({
       success:res=>{
         if (res.errMsg == "collection.count:ok") {
           this.setData({
@@ -108,7 +108,7 @@ Page({
       name:'HouseInfo',
       data:{
         type: type,
-        key: 'NewHouse',
+        key: 'SecondHouse',
         page: page,
         min: min,
         max: max,
@@ -217,7 +217,7 @@ Page({
     this.setData({
       page:0
     })
-    this.QueryHose(this.data.page.this.data.type)
+    this.QueryHose(this.data.page, this.data.type)
   },
 
   /**
@@ -227,7 +227,7 @@ Page({
     this.setData({
       page:this.data.page++
     })
-    this.QueryHose(this.data.page.this.data.type)
+    this.QueryHose(this.data.page, this.data.type)
   },
 
   /**

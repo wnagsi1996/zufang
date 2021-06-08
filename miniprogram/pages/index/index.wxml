@@ -5,12 +5,12 @@
     </navigator>
   </view>
   <view class="item">
-    <navigator>
+    <navigator url="../../Companypackage/secondHandHouse/secondHandHouse">
       <image src="../image/secondHand.png"></image>
     </navigator>
   </view>
   <view class="item">
-    <navigator>
+    <navigator url="../../Companypackage/rentingHouse/rentingHouse">
       <image src="../image/rentinghouse.png"></image>
     </navigator>
   </view>
@@ -25,7 +25,7 @@
     <image src="../image/qualifications.png"></image>
     <text>公司资质</text>
   </view>
-  <view class="item">
+  <view class="item" data-url="../../Companypackage/Contact/Contact" bindtap="toUrl">
     <image src="../image/relation.png"></image>
     <text>联系员工</text>
   </view>
@@ -48,7 +48,7 @@
 <view class="list-name font-size-16">店长推荐</view>
 <view class="list">
   <view wx:for="{{list}}" wx:key="id">
-      <listInformation recommend="{{true}}" listdata="{{item}}" data-id="{{item.id}}" bindtap="toUrl"></listInformation>
+      <listInformation recommend="{{true}}" listdata="{{item}}" data-entrustType="{{item.EntrustType}}" data-id="{{item.id}}" bindtap="toUrl"></listInformation>
   </view>
   <!-- <view  class="list-box" wx:for="{{list}}" wx:key="id">
     <view class="list-left">

@@ -1,0 +1,66 @@
+<!--Companypackage/houseDetail/houseDetail.wxml-->
+<swiper class="swiper" indicator-dots>
+  <swiper-item wx:for="{{houseImages}}" wx:key="id">
+    <image class="swiper-img" src="{{item}}"></image>
+  </swiper-item>
+</swiper>
+
+<view class="header-box">
+  <view class="header-name">{{title}}</view>
+  <view class="header-price">
+    <view class="left font-size-16">{{totalPrice}}元/月</view>
+    <view class="right">{{houseStyle}}</view>
+  </view>
+  <view class="header-location">所在小区：{{location}}</view>
+  <view class="header-tags">
+    <view class="tags" wx:for='{{Tags}}'  wx:key="id">{{item}}</view>
+  </view>
+</view>
+
+<view class="contact-box">
+  <view class="contact-img">
+    <image src="../image/icon.png"></image>
+  </view>
+  <view class="contact-info">
+    <view class="name">{{charge.name}}</view>
+    <view class="phone">{{displayPhone}}</view>
+  </view>
+  <view class="contact-phone" bindtap="_handPhone">
+    <image src="../image/phone.png"></image>
+    <text>联系经纪人</text>
+  </view>
+</view>
+
+<view class="detail-box">
+  <view class="title">房源信息表</view>
+  <view class="detail-item" wx:for="{{DetialList}}" wx:key="id">
+    <view class="name">{{item.title}}:</view>
+    <view class="info">{{item.value}}</view>
+  </view>
+</view>
+
+<view class="footer">
+  <view class="footer-info">
+    <view class="item" bindtap="_handCollection">
+      <image src="{{HasCollection?'../image/collection.png':'../image/uncollection.png'}}"></image>
+      <text>{{HasCollection?'已收藏':'收藏'}}</text>
+    </view>
+    <view class="item">
+      <image src="../image/calculate.png"></image>
+      <text>房贷计算器</text>
+    </view>
+  </view>
+  <view class="footer-btn" bindtap="_handYY">
+    预约看房
+  </view>
+</view>
+
+
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  cancel-text="取消"
+  bind:cancel="onClose"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>

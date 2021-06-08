@@ -38,7 +38,10 @@
     <view class="icon">
     <image src="../image/address.png"></image>
   </view>
-  <view class="user-info">在线客服</view>
+  <view class="user-info" style="position:relative">
+    在线客服
+    <button open-type='contact' style="color:black;height:35px;line-height:35px;font-weight: lighter;padding:0;width:100%;border:none;position:absolute;left:0;top:-8rpx;opacity:0">在线客服</button>
+  </view>
   </view>
   <view class="user-item">
     <view class="icon">

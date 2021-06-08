@@ -1,0 +1,12 @@
+<!--Companypackage/Contact/Contact.wxml-->
+<view class="userlist">
+  <view class="user-item" wx:for="{{UserList}}" wx:key="_id">
+    <view class="user-left">
+      <view class="name">姓名:{{item.name}}</view>
+      <view>电话：{{item.phone}}</view>
+    </view>
+    <view class="user-right" data-phone="{{item.phone}}" bindtap="_handPhone">
+      <van-icon name="phone-o" size="48rpx" color="green" />
+    </view>
+  </view>
+</view>
