@@ -59,6 +59,14 @@
         "Contact/Contact"
 
       ]
+    },
+    {
+      "root":"Adminpackage",
+      "name":"Adminpackage",
+      "pages":[ 
+        "Home/Home",
+        "managerEntrust/managerEntrust"
+      ]
     }
   ],
   "usingComponents": {

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    admin:false
   },
 
   /**
@@ -61,6 +61,32 @@ Page({
   toUrl(e){
     wx.navigateTo({
       url: e.currentTarget.dataset.url,
+    })
+  },
+  _handAdmin(){
+    wx.cloud.callFunction({
+      name:'InitInfo',
+      data:{
+        type:'ADMIN'
+      },
+      success:res=>{
+        console.log(res)
+        if(res.result.total>0){
+          this.setData({
+            admin:true
+          })
+          wx.navigateTo({
+            url: '../../Adminpackage/Home/Home',
+          })
+        }else{
+          this.setData({
+            admin:false
+          })
+        }
+      },
+      fail:err=>{
+        console.log(err)
+      }
     })
   }
 })

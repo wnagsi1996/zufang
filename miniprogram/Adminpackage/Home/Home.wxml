@@ -1,0 +1,18 @@
+<!--Adminpackage/Home/Home.wxml-->
+<view class="list">
+  <navigator url="../managerEntrust/managerEntrust">
+    <image src="../images/1.png"></image>
+  </navigator>
+  <navigator url="">
+    <image src="../images/2.png"></image>
+  </navigator>
+  <navigator url="">
+    <image src="../images/3.png"></image>
+  </navigator>
+  <navigator url="">
+    <image src="../images/4.png"></image>
+  </navigator>
+  <navigator url="">
+    <image src="../images/5.png"></image>
+  </navigator>
+</view>
