@@ -3,7 +3,7 @@
   <navigator url="../managerEntrust/managerEntrust">
     <image src="../images/1.png"></image>
   </navigator>
-  <navigator url="">
+  <navigator url="../Recommend/Recommend">
     <image src="../images/2.png"></image>
   </navigator>
   <navigator url="">

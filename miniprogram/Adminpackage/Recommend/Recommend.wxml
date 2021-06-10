@@ -1,0 +1,33 @@
+<!--Adminpackage/Recommend/Recommend.wxml-->
+<view class="list-box">
+  <view class="list-item" wx:for="{{HouseList}}" wx:key="id" data-id="{{item._id}}" bindtap="_handTj">
+    <view class="item-img">
+      <image src="{{item.photoInfo[0]}}"></image>
+    </view>
+    <view class="item-info">
+      <view class="name">{{item.title}}</view>
+      <view class="txt">房子地点: {{item.FormData.location}}</view>
+      <view class="txt">房子信息: {{item.FormData.houseStyle}} {{item.FormData.area}}㎡ 推荐指数:{{item.recommendData.weight?item.recommendData.weight:'无'}}</view>
+      <view class="txt">推荐信息: {{item.recommendData.recommender}} {{item.recommendData.updatetime}} {{item.recommendData.Isrecommend?'推荐':'尚未设置推荐（点击即可推荐）'}}</view>
+    </view>
+    <view class="tj" wx:if="{{item.recommendData.recommender}}">已推荐</view>
+  </view>
+</view>
+<van-dialog id="van-dialog" />
+
+<van-dialog
+  use-slot
+  title="设置推荐指数"
+  show="{{ showModal }}"
+  show-cancel-button
+  bind:close="onClose"
+  bind:confirm="_handSubmit"
+>
+ <view class="tag-box">
+  <view class="tag {{weight==1?'active':''}}" data-id="1" bindtap="_handNum">1</view>
+  <view class="tag {{weight==2?'active':''}}" data-id="2" bindtap="_handNum">2</view>
+  <view class="tag {{weight==3?'active':''}}" data-id="3" bindtap="_handNum">3</view>
+  <view class="tag {{weight==4?'active':''}}" data-id="4" bindtap="_handNum">4</view>
+  <view class="tag {{weight==5?'active':''}}" data-id="5" bindtap="_handNum">5</view>
+ </view>
+</van-dialog>

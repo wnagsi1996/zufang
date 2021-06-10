@@ -1,0 +1,46 @@
+/* Adminpackage/EntrustDetail/EntrustDetail.wxss */
+.coninter{
+  width: 700rpx;
+  margin: 0 auto;
+}
+.header{
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin:20rpx 0
+}
+.header .title{
+  padding-bottom: 10rpx;
+}
+.header .txt{
+  color: #888;
+  padding:4rpx 0;
+}
+.detail-box{
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin:20rpx 0
+}
+.detail-box .name{
+  font-size: 30rpx;
+  padding-bottom: 10rpx;
+}
+.detail-box .txt{
+  padding:8rpx 0;
+  color: #888;
+}
+.detail-box .txt .blue{
+  color:#0081ff;
+  padding-left: 8rpx;
+}
+.detail-box .img{
+  margin-top: 20rpx;
+}
+.btn{
+  margin: 20rpx 0; 
+}
+.review-title{
+  width: 90%;
+  margin:20rpx auto;
+}

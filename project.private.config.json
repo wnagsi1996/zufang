@@ -65,6 +65,24 @@
           "pathName": "Companypackage/Contact/Contact",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "房源",
+          "pathName": "Adminpackage/managerEntrust/managerEntrust",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "审核信息",
+          "pathName": "Adminpackage/EntrustDetail/EntrustDetail",
+          "query": "id=b00064a760be35da1e81b20f0859cd36",
+          "scene": null
+        },
+        {
+          "name": "推荐",
+          "pathName": "Adminpackage/Recommend/Recommend",
+          "query": "",
+          "scene": null
         }
       ]
     }

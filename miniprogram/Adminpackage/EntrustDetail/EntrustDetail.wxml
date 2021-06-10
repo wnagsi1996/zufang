@@ -1,0 +1,46 @@
+<!--Adminpackage/EntrustDetail/EntrustDetail.wxml-->
+<view class="coninter">
+  <view class="header">
+    <view class="title">提示：请检查委托人发布的详细委托内容</view>
+    <view class="txt">1、如有不明确的请直接联系委托人</view>
+    <view class="txt">2、如果检查没有问题，点击“下一步”,按照提示操作即可。</view>
+  </view>
+  <view class="detail-box">
+    <view class="name">房子详细信息 （{{detailData.EntrustType=='sale'?'出售':'出租'}}）</view>
+    <view class="txt">委托人: <text class="blue">{{detailData.FormData.name}}</text></view>
+    <view class="txt">委托人电话: <text class="blue">{{detailData.FormData.phonenumber}}</text></view>
+    <view class="txt">产权面积(单位:㎡): <text class="blue">{{detailData.FormData.area}}</text></view>
+    <view class="txt">外标价位(单位:{{detailData.EntrustType=='sale'?'万':'元/月'}}): <text class="blue">{{detailData.FormData.totalPrice}}</text></view>
+    <view class="txt">所属小区: <text class="blue">{{detailData.FormData.location}}</text></view>
+    <view class="txt">房源地址: <text class="blue">{{detailData.FormData.detailLocation}}</text></view>
+    <view class="txt">房子状况: <text class="blue">{{detailData.FormData.HouseType}}</text></view>
+    <view class="txt">房子类型: <text class="blue">{{detailData.FormData.houseStyle}}</text></view>
+    <view class="txt">装修配置: <text class="blue">{{detailData.FormData.furniture}}</text></view>
+    <view class="txt">房子优势: <text class="blue">
+      <block wx:for="{{detailData.FormData.Tags}}" wx:key="id">{{item}} </block>
+    </text></view>
+    <view class="txt">看房方式: <text class="blue">{{detailData.FormData.LookUpStyle}}</text></view>
+    <view class="txt">契税发票时间是否满两年: <text class="blue">{{detailData.FormData.Signing}}</text></view>
+    <view class="txt">网签是否满三年: <text class="blue">{{detailData.FormData.Invoice}}</text></view>
+    <view class="txt">发布委托时间: <text class="blue">{{detailData.updateTime}}</text></view>
+    <view class="img">
+      <image wx:for="{{detailData.photoInfo}}" wx:key="index" src="{{item}}"></image>
+    </view>
+  </view>
+  <view class="btn">
+    <van-button type="info" block bindtap="_handReview">审核</van-button>
+  </view>
+</view>
+
+<van-dialog
+  use-slot
+  title="给该条房源信息起个标题"
+  show="{{ show }}"
+  show-cancel-button
+  bind:close="onClose"
+  before-close="{{ beforeClose }}"
+>
+ <view class="review-title">
+  <van-field type="text" value="{{title}}" placeholder="请输入标题" bindinput="titleInp" />
+ </view>
+</van-dialog>

@@ -4,14 +4,37 @@
   <van-tab title="已发布" />
 </van-tabs>
 
-<view class="list-box">
-  <view class="list-item" wx:for="{{CheckingEntrustList}}" wx:key="_id">
-    <view class="name"><text>{{item.FormData.name}}</text></view>
-    <view>委托人联系方式：<text>{{item.FormData.phonenumber}}</text></view>
-    <view>委托发布时间：<text>{{item.updateTime}}</text></view>
-    <view>委托类型：<text>{{item.EntrustType=="sale"?'出售':'出租'}}</text></view>
-    <view>审核状态:<text>待审核</text></view>
-    <view>发布状态:<text>待发布</text></view>
-    <view>房源详细地址:<text>{{item.FormData.detailLocation}}</text></view>
+<block wx:if="{{index==0}}">
+  <view class="list-box" wx:if="{{CheckingEntrustList.length>0}}">
+    <view class="list-item" wx:for="{{CheckingEntrustList}}" wx:key="_id" data-id="{{item._id}}" data-type="unpublished" bindtap="_handNavigate">
+      <view class="name"><text>{{item.FormData.name}}</text></view>
+      <view class="info">委托人联系方式：<text>{{item.FormData.phonenumber}}</text></view>
+      <view class="info">委托发布时间：<text>{{item.updateTime}}</text></view>
+      <view class="info">委托类型：<text class="blue">{{item.EntrustType=="sale"?'出售':'出租'}}</text></view>
+      <view class="info">审核状态: <text class="red">待审核</text></view>
+      <view class="info">发布状态: <text class="red">待发布</text></view>
+      <view class="info">房源详细地址: <text>{{item.FormData.detailLocation}}</text></view>
+    </view>
   </view>
-</view>
+  <view wx:else>
+    <van-empty description="暂无待审核房源" />
+  </view>
+</block>
+
+<block wx:if="{{index==1}}">
+  <view class="list-box" wx:if="{{publishedEntrustList.length>0}}">
+    <view class="list-item" wx:for="{{publishedEntrustList}}" wx:key="_id"  data-id="{{item._id}}" data-type="published" bindtap="_handNavigate">
+      <view class="name"><text>{{item.title}}</text></view>
+      <view class="info">委托人: <text>{{item.FormData.name}}</text></view>
+      <view class="info">委托人联系方式：<text>{{item.FormData.phonenumber}}</text></view>
+      <view class="info">委托发布时间：<text>{{item.updateTime}}</text></view>
+      <view class="info">委托类型：<text class="blue">{{item.EntrustType=="sale"?'出售':'出租'}}</text></view>
+      <view class="info">审核状态: <text class="red">已审核 {{item.checkedBy?item.checkedBy:''}}（{{item.checkedTime?item.checkedTime:''}}）</text></view>
+      <view class="info">发布状态: <text class="red">已发布 {{item.checkedBy?item.checkedBy:''}}（{{item.checkedTime?item.checkedTime:''}}）</text></view>
+      <view class="info">房源详细地址: <text>{{item.FormData.detailLocation}}</text></view>
+    </view>
+  </view>
+  <view wx:else>
+    <van-empty description="无房源数据" />
+  </view>
+</block>

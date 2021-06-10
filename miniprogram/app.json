@@ -65,7 +65,10 @@
       "name":"Adminpackage",
       "pages":[ 
         "Home/Home",
-        "managerEntrust/managerEntrust"
+        "managerEntrust/managerEntrust",
+        "EntrustDetail/EntrustDetail",
+        "PublishedDetail/PublishedDetail",
+        "Recommend/Recommend"
       ]
     }
   ],
