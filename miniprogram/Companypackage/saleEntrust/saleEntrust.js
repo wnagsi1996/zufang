@@ -448,7 +448,7 @@ Page({
           title: '委托提交成功',
         })
         wx.navigateTo({
-          url: '../../pages/index/index',
+          url: '../../pages/ownerEntrust/ownerEntrust',
         })
       },
       fail:(err)=>{

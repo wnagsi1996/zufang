@@ -55,7 +55,7 @@ const autoLogin=()=>{
         wx.setStorageSync('userInfo', userInfo);
       }else{
         wx.navigateTo({
-          url: '../pages/login/login',
+          url: '../login/login',
         })
       }
     },

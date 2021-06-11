@@ -88,5 +88,15 @@ Page({
         console.log(err)
       }
     })
+  },
+  clearUser(){
+    this.setData({
+      userInfo:false,
+      admin:false
+    })
+    wx.removeStorageSync('userInfo');
+    wx.showToast({
+      title: '清除成功',
+    })
   }
 })
