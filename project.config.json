@@ -128,6 +128,35 @@
 					"id": -1,
 					"name": "管理员首页",
 					"pathName": "Adminpackage/Home/Home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加员工",
+					"pathName": "Adminpackage/StaffInfo/StaffInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "信息展示",
+					"pathName": "Adminpackage/companyInfo/companyInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置管理员",
+					"pathName": "Adminpackage/managerAdmin/managerAdmin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "审核预览",
+					"pathName": "Adminpackage/PublishedDetail/PublishedDetail",
+					"query": "id=79550af260be367a1dd26a6c5483b045",
 					"scene": null
 				}
 			]

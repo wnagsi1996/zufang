@@ -1,2 +1,51 @@
 <!--Adminpackage/PublishedDetail/PublishedDetail.wxml-->
-<text>Adminpackage/PublishedDetail/PublishedDetail.wxml</text>
+<view class="coninter">
+  <view class="detail-box">
+    <view class="name">房子详细信息 （{{detailData.EntrustType=='sale'?'出售':'出租'}}）</view>
+    <view class="txt">发布设置标题: <text class="blue">{{detailData.title}}</text></view>
+    <view class="txt">委托人: <text class="blue">{{detailData.FormData.name}}</text></view>
+    <view class="txt">委托人电话: <text class="blue">{{detailData.FormData.phonenumber}}</text></view>
+    <view class="txt">产权面积(单位:㎡): <text class="blue">{{detailData.FormData.area}}</text></view>
+    <view class="txt">外标价位(单位:{{detailData.EntrustType=='sale'?'万':'元/月'}}): <text class="blue">{{detailData.FormData.totalPrice}}</text></view>
+    <view class="txt">所属小区: <text class="blue">{{detailData.FormData.location}}</text></view>
+    <view class="txt">房源地址: <text class="blue">{{detailData.FormData.detailLocation}}</text></view>
+    <view class="txt">房子状况: <text class="blue">{{detailData.FormData.HouseType}}</text></view>
+    <view class="txt">房子类型: <text class="blue">{{detailData.FormData.houseStyle}}</text></view>
+    <view class="txt">装修配置: <text class="blue">{{detailData.FormData.furniture}}</text></view>
+    <view class="txt">房子优势: <text class="blue">
+      <block wx:for="{{detailData.FormData.Tags}}" wx:key="id">{{item}} </block>
+    </text></view>
+    <view class="txt">看房方式: <text class="blue">{{detailData.FormData.LookUpStyle}}</text></view>
+    <view class="txt">契税发票时间是否满两年: <text class="blue">{{detailData.FormData.Signing}}</text></view>
+    <view class="txt">网签是否满三年: <text class="blue">{{detailData.FormData.Invoice}}</text></view>
+    <view class="txt">发布委托时间: <text class="blue">{{detailData.updateTime}}</text></view>
+    <view class="img">
+      <image wx:for="{{detailData.photoInfo}}" wx:key="index" src="{{item}}"></image>
+    </view>
+  </view>
+  <view class="detail-box">
+     <view class="name">审核发布信息</view>
+     <view class="txt">审核人:<text>{{detailData.charge.name}}</text></view>
+     <view class="txt">审核时间:<text>{{detailData.checkedTime}}</text></view>
+     <view class="txt">发布人:<text>{{detailData.checkedBy}}</text></view>
+     <view class="txt">发布时间:<text>{{detailData.publishTime}}</text></view>
+     <view class="txt">审核发布状态:<text>{{detailData.checkedTime?'已审核':'待审核'}} {{detailData.publish?'已发布':'未发布'}}</text></view>
+  </view>
+  <view class="detail-box">
+    <view class="name">首页推荐信息</view>
+    <view class="txt">是否首页推荐:<text>{{detailData.recommendData.Isrecommend?'是':'否'}}</text></view>
+    <view class="txt">推荐人:<text>{{detailData.recommendData.recommender?detailData.recommendData.recommender:'无'}}</text></view>
+    <view class="txt">推荐时间:<text>{{detailData.recommendData.updatetime?detailData.recommendData.updatetime:'无'}}</text></view>
+    <view class="txt">推荐指数:<text>{{detailData.recommendData.weight!=0?detailData.recommendData.updatetime:'无'}}</text></view>
+  </view>
+  <view class="detail-box">
+    <view class="name">房源负责人</view>
+    <view class="txt">姓名:<text>{{detailData.charge.name}}</text></view>
+    <view class="txt">手机号码:<text>{{detailData.charge.phone}}</text></view>
+  </view>
+  <view>
+    <van-button class="btn" type="info" block bindtap="_handChangePublish">修改</van-button>
+    <van-button class="btn" type="danger" block bindtap="_handDel">删除</van-button>
+  </view>
+</view>
+

@@ -1,0 +1,35 @@
+<!--Adminpackage/managerAdmin/managerAdmin.wxml-->
+<view class="container" wx:if="{{!showCode}}">
+  <view class="header">
+    <view class="title">设置管理员使用说明</view>
+    <view class="desc" style="color:#42A5F5;">使用前请先简单阅读以下使用说明：</view>
+    <view class="desc">1、管理员具有管理后台的权限；</view>
+    <view class="desc">2、添加：击下面的加号添加新的管理员；</view>
+    <view class="desc">3、删除：长按对应管理员信息卡片即可删除；</view>
+    <view class="desc">3、请注意把控好管理员的数量,避免权限被滥用；</view>
+    <view class="desc">【注意】：点击下面的加号添加新的管理员。</view>
+  </view>
+
+  <view class="add-btn" bindtap="_handShowAdd">
+    <image src="../images/add.png"></image>
+  </view>
+  <view class="user-list">
+    <van-swipe-cell right-width="{{ 65 }}" wx:for="{{UserList}}"  wx:key="_id" name="{{item}}" bind:click="_handClick" async-close bind:close="_handClose">
+      <view class="user-item">
+        <view class="left">
+          <view class="bold name">{{item.name}}</view>
+          <view class="bold phone">{{item.phone}}</view>
+          <view class="txt">添加时间:{{item.updatetime}}</view>
+        </view>
+      </view>
+       <view slot="right" class="user-del">删除</view>
+    </van-swipe-cell>
+  </view>
+</view>
+
+
+<view class="qr-box" wx:if="{{showCode}}">
+  <view class="title">使用说明：给需要添加的管理员扫描下面的二维码。请注意不要泄露该二维码给其他无关的用户,使用时只能在设置某个用户为管理员时给其扫描,以免造成管理员权限的泄露。二维码只能使用一次,用完就马上失效。</view>
+  <image src="{{qrcodeURL}}" /> 
+  <van-button type="info" block bindtap="_handBack">返回</van-button>
+</view>

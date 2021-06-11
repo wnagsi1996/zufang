@@ -1,0 +1,28 @@
+/* Adminpackage/companyInfo/companyInfo.wxss */
+.conintar{
+  margin: 25rpx;
+}
+.info-box{
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+.info-item .title{
+  font-weight: bold;
+  font-size: 30rpx;
+  padding-bottom: 8rpx;
+}
+.info-item .blue{
+  color:#42A5F5;
+  padding:8rpx 0;
+}
+.info-item .txt{
+  color: #888;
+}
+.info-item .inp{
+  border-radius: 10rpx;
+  border:1rpx solid #f7f7f7;
+  padding:12rpx;
+  margin:12rpx 0;
+}

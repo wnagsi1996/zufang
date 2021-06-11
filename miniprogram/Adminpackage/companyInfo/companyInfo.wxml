@@ -1,0 +1,18 @@
+<!--Adminpackage/companyInfo/companyInfo.wxml-->
+<view class="conintar">
+  <view class="info-box">
+    <view class="info-item">
+      <view class="title">公司介绍(共{{CompanyData.introduce.length}}/2000字)</view>
+      <view class="blue">该文案将用于在公司资质页面进行展示,不超过2000字</view>
+      <view class="txt">上次更新: {{CompanyData.editer}} {{CompanyData.phone}}</view>
+      <view class="txt">上次更新时间:{{CompanyData.updatetime}}</view>
+      <textarea class="inp" value="{{CompanyData.introduce}}" maxlength="2000" data-key="introduce" bindinput="_handInp" placeholder="请输入公司介绍"></textarea>
+    </view>
+     <view class="info-item">
+      <view class="title">首页公告(共{{CompanyData.notice.length}}/100)</view>
+      <view class="blue">该文案将用于在首页的公告位置进行展示,不超过100字</view>
+      <input class="inp" value="{{CompanyData.notice}}" maxlength="100" data-key="notice" bindinput="_handInp" placeholder="请输入公司介绍" />
+    </view>
+  </view>
+  <van-button type="info" block bindtap="_handSave">保存</van-button>
+</view>

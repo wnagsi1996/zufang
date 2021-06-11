@@ -17,10 +17,10 @@
 </view>
 
 <view class="menu-box">
-  <view class="item" bindtap="goCalculator" data-url="" bindtap="toUrl">
+  <!-- <view class="item" bindtap="goCalculator" data-url="" bindtap="toUrl">
     <image src="../image/calculate-home.png"></image>
     <text>房贷计算</text>
-  </view>
+  </view> -->
   <view class="item" data-url="../../Companypackage/qualification/qualification" bindtap="toUrl">
     <image src="../image/qualifications.png"></image>
     <text>公司资质</text>

@@ -1,1 +1,29 @@
 /* Adminpackage/PublishedDetail/PublishedDetail.wxss */
+.coninter{
+  margin:25rpx;
+}
+.detail-box{
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin:20rpx 0
+}
+.detail-box .name{
+  font-size: 30rpx;
+  padding-bottom: 10rpx;
+}
+.detail-box .txt{
+  padding:8rpx 0;
+  color: #888;
+}
+.detail-box .txt .blue{
+  color:#0081ff;
+  padding-left: 8rpx;
+}
+.detail-box .img{
+  margin-top: 20rpx;
+}
+.btn{
+  margin: 30rpx 0;
+  display: block;
+}

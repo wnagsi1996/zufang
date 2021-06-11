@@ -6,13 +6,13 @@
   <navigator url="../Recommend/Recommend">
     <image src="../images/2.png"></image>
   </navigator>
-  <navigator url="">
+  <navigator url="../StaffInfo/StaffInfo">
     <image src="../images/3.png"></image>
   </navigator>
-  <navigator url="">
+  <navigator url="../companyInfo/companyInfo">
     <image src="../images/4.png"></image>
   </navigator>
-  <navigator url="">
+  <navigator url="../managerAdmin/managerAdmin">
     <image src="../images/5.png"></image>
   </navigator>
 </view>

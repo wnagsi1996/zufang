@@ -68,7 +68,10 @@
         "managerEntrust/managerEntrust",
         "EntrustDetail/EntrustDetail",
         "PublishedDetail/PublishedDetail",
-        "Recommend/Recommend"
+        "Recommend/Recommend",
+        "StaffInfo/StaffInfo",
+        "companyInfo/companyInfo",
+        "managerAdmin/managerAdmin"
       ]
     }
   ],

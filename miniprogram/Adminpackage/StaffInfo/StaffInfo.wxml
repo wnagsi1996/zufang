@@ -1,0 +1,49 @@
+<!--Adminpackage/StaffInfo/StaffInfo.wxml-->
+<view class="container" wx:if="{{!showEdit}}">
+  <view class="header">
+    <view class="title">设置联系员工信息使用说明</view>
+    <view class="desc" style="color:#42A5F5;">使用前请先简单阅读以下使用说明：</view>
+    <view class="desc">1、设置的员工信息将显示在首页的 “联系员工” 模块；</view>
+    <view class="desc">2、作用：可以让看房的用户第一时间联系到你们；</view>
+    <view class="desc">3、员工的姓名信息将以 “李*华” 或 “李*” 进行展示 ,手机号码信息将会以 “134****0987” 的形式进行展示；</view>
+    <view class="desc">4、看房的用户直接点击员工的名片就能拨打电话联系到你们；</view>
+    <view class="desc">【注意】：点击下面的加号添加新的员工信息。</view>
+  </view>
+
+  <view class="add-btn" bindtap="_handShowAdd">
+    <image src="../images/add.png"></image>
+  </view>
+  <view class="user-list">
+    <van-swipe-cell right-width="{{ 65 }}" wx:for="{{userList}}"  wx:key="_id" name="{{item._id}}" bind:click="_handClick" async-close bind:close="_handClose">
+      <view class="user-item">
+        <view class="left">
+          <view class="bold name">{{item.name}}</view>
+          <view class="bold phone">{{item.phone}}</view>
+          <view class="txt">添加时间:{{item.updatetime}}</view>
+        </view>
+        <view class="right">
+          <van-icon name="edit" size="60rpx" color="#888" data-item="{{item}}" bindtap="_handEdit" />
+        </view>
+      </view>
+       <view slot="right" class="user-del">删除</view>
+    </van-swipe-cell>
+  </view>
+</view>
+
+<view class="add-box" wx:if="{{showEdit}}">
+  <view class="title">添加新员工信息</view>
+  <view class="form-item">
+    <view class="cell-item">
+      <text>姓名:</text>
+      <input type="text" value="{{form.name}}" placeholder="输入姓名"  data-key="name" bindinput="InputData" />
+    </view>
+     <view class="cell-item">
+      <text>手机号:</text>
+      <input type="number" value="{{form.phone}}" placeholder="输入手机号"  data-key="phone" bindinput="InputData" />
+    </view>
+    <view class="btn-box">
+      <van-button class="btn" block type="danger" bindtap="_handCancel">取消</van-button>
+      <van-button class="btn" block type="info" bindtap="_handSave">保存</van-button>
+    </view>
+  </view>
+</view>
