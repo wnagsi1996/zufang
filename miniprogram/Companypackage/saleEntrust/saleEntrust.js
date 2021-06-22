@@ -205,7 +205,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
 
   /**
@@ -312,6 +312,7 @@ Page({
   // 居室
   onHouseStyleListConfirm(e){
     let value=e.detail.value  //roomStyle
+    
     let str='';
     let roomStyle='';
     value.forEach((n,i)=>{
@@ -319,7 +320,7 @@ Page({
         if(n.includes(0) || n.includes(1)){
           roomStyle='1居室'
         }else{
-          roomStyle=`${Number.parseInt(n.value)}居室`
+          roomStyle=`${Number.parseInt(n)}居室`
         }
       }
       str+=n.includes(0)?'':n
@@ -429,8 +430,6 @@ Page({
       mask: true
     });
     let FormData=this.data.newFormData;
-    console.log(FormData)
-    console.log(photoInfo)
     console.log(formatTime(new Date()))
     wx.cloud.callFunction({
       name:'Entrust',
@@ -442,14 +441,16 @@ Page({
         updateTime: formatTime(new Date())
       },
       success:(res)=>{
-        console.log(1)
         wx.hideLoading();
         wx.showToast({
           title: '委托提交成功',
         })
-        wx.navigateTo({
-          url: '../../pages/ownerEntrust/ownerEntrust',
-        })
+        setTimeout(() => {
+          wx.switchTab({
+            url: '../../pages/ownerEntrust/ownerEntrust',
+          })
+        }, 2000);
+        
       },
       fail:(err)=>{
         console.log(err)

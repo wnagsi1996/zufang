@@ -45,13 +45,13 @@ const autoLogin=()=>{
     },
     success:res=>{
       console.log(res)
-      let result=res.result.data;
-      if(result.length>0){
+      let result=res.result.data[0];
+      if(result.name){
         let userInfo=wx.getStorageSync('userInfo');
-        userInfo['name']=result[0].name;
-        userInfo['phone']=result[0].phone;
-        userInfo['openid']=result[0]._openid;
-        userInfo['address']=result[0].address;
+        userInfo['name']=result.name;
+        userInfo['phone']=result.phone;
+        userInfo['openid']=result._openid;
+        userInfo['address']=result.address;
         wx.setStorageSync('userInfo', userInfo);
       }else{
         wx.navigateTo({

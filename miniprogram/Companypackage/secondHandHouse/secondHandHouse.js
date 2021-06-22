@@ -218,6 +218,7 @@ Page({
       page:0
     })
     this.QueryHose(this.data.page, this.data.type)
+    wx.stopPullDownRefresh();
   },
 
   /**

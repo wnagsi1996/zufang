@@ -99,6 +99,16 @@ Page({
     })
     this.HoseDettail(id);
     this.HasCollection(openid,id)
+    wx.showShareMenu({
+      withShareTicket:true
+    })
+  },
+  onShareAppMessage(){
+    let userInfo=wx.getStorageSync('userInfo');
+    return {
+      title: this.data.title,
+      path: 'Companypackage/houseDetail/houseDetail?useropenid='+userInfo.openid
+    }
   },
   HoseDettail(id){
     wx.showLoading({

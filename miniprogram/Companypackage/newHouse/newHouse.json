@@ -1,5 +1,9 @@
 {
   "navigationBarTitleText": "新房等你挑",
+  "navigationBarBackgroundColor": "#e41c1d",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f7f7f7",
+  "backgroundTextStyle":"dark",
   "enablePullDownRefresh": true,
   "usingComponents": {
     "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",

@@ -10,8 +10,17 @@ Page({
   },
  
   onLoad() {
+    wx.showShareMenu({
+      withShareTicket:true
+    })
     this.getQueryHose()
     this.getCompanyInfo()
+  },
+  onShareAppMessage(){
+    return {
+      title: '租房小程序',
+      path: '/page/index/index?id=123'
+    }
   },
   //前往计算页面
   goCalculator(){

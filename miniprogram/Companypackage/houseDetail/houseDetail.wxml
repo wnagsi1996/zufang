@@ -45,15 +45,16 @@
       <image src="{{HasCollection?'../image/collection.png':'../image/uncollection.png'}}"></image>
       <text>{{HasCollection?'已收藏':'收藏'}}</text>
     </view>
-    <view class="item">
+    <!-- <view class="item">
       <image src="../image/calculate.png"></image>
       <text>房贷计算器</text>
-    </view>
+    </view> -->
   </view>
   <view class="footer-btn" bindtap="_handYY">
     预约看房
   </view>
 </view>
+<view class="footer-null"></view>
 
 
 <van-action-sheet
